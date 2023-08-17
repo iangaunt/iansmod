@@ -5,4 +5,10 @@ but unfortunately the MDK had shit the bed and wasn't working very well for me).
 
 ## Current Features
 
-* None. Lol.
+* None at the moment.
+
+## Future Features
+
+* Some new ores and armor.
+* Some new block textures.
+* Anything I'm feeling, really!
