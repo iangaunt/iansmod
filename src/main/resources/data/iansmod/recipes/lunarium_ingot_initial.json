@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "#N#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "iansmod:lunarium_nugget"
+        },
+        "N": {
+            "item": "minecraft:netherite_ingot"
+        }
+    },
+    "result": {
+        "item": "iansmod:lunarium_ingot"
+    }
+}

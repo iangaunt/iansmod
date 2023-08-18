@@ -1,0 +1,11 @@
+{
+    "block.iansmod.lunarium_block": "Lunarium Block",
+    "block.iansmod.lunarium_ore": "Lunarium Ore",
+
+    "item.iansmod.aligned_lunarium_ingot": "Aligned Lunarium Ingot",
+    "item.iansmod.lunarium_apple": "Lunarium Apple",
+    "item.iansmod.lunarium_ingot": "Lunarium Ingot",
+    "item.iansmod.lunarium_nugget": "Lunarium Nugget",
+
+    "itemGroup.iansmodtab": "Ian's Mod"
+}
