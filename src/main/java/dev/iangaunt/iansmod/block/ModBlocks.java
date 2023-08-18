@@ -26,7 +26,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> LUNARIUM_BLOCK = registerBlock("lunarium_block",
         () -> new Block(
             BlockBehaviour.Properties.of(Material.METAL)
-            .strength(9f).requiresCorrectToolForDrops()
+            .strength(2f).requiresCorrectToolForDrops()
             .lightLevel(state -> 10)
         ), IansMod.MOD_TAB
     );
@@ -34,8 +34,8 @@ public class ModBlocks {
     // Lunarium Ore registry.
     public static final RegistryObject<Block> LUNARIUM_ORE = registerBlock("lunarium_ore",
         () -> new Block(
-            BlockBehaviour.Properties.of(Material.METAL)
-            .strength(9f).requiresCorrectToolForDrops()
+            BlockBehaviour.Properties.of(Material.STONE)
+            .strength(1.6f).requiresCorrectToolForDrops()
             .lightLevel(state -> 4)
         ), IansMod.MOD_TAB
     );

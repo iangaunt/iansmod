@@ -5,7 +5,8 @@ but unfortunately the MDK had shit the bed and wasn't working very well for me).
 
 ## Current Features
 
-* None at the moment.
+* Lunarium Items (Ingots, Nuggots, Ore, Block, Runs, Apples)
+* Music Disc - REBOUND! by JPEGMAFIA
 
 ## Future Features
 

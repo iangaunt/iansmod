@@ -3,6 +3,7 @@ package dev.iangaunt.iansmod;
 import com.mojang.logging.LogUtils;
 
 import dev.iangaunt.iansmod.item.ModTab;
+import dev.iangaunt.iansmod.sound.ModSounds;
 import dev.iangaunt.iansmod.item.ModItems;
 import dev.iangaunt.iansmod.block.ModBlocks;
 import net.minecraft.world.item.CreativeModeTab;
@@ -41,6 +42,9 @@ public class IansMod {
 
         // Register the blocks to the eventBus.
         ModBlocks.register(eventBus);
+        
+        // Register the items to the eventBus.
+        ModSounds.register(eventBus);
 
         // Register the setup method for modloading
         eventBus.addListener(this::setup);

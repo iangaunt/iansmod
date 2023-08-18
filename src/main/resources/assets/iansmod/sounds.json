@@ -1,0 +1,10 @@
+{
+    "rebound_disc": {
+        "sounds": [
+            {
+                "name": "iansmod:rebound_disc",
+                "stream": true
+            }
+        ]
+    }
+}

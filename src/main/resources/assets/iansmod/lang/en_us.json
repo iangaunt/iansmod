@@ -3,9 +3,15 @@
     "block.iansmod.lunarium_ore": "Lunarium Ore",
 
     "item.iansmod.aligned_lunarium_ingot": "Aligned Lunarium Ingot",
+    "item.iansmod.lunaric_rune": "Lunaric Rune",
     "item.iansmod.lunarium_apple": "Lunarium Apple",
     "item.iansmod.lunarium_ingot": "Lunarium Ingot",
     "item.iansmod.lunarium_nugget": "Lunarium Nugget",
 
-    "itemGroup.iansmodtab": "Ian's Mod"
+    "itemGroup.iansmodtab": "Ian's Mod",
+
+    "item.iansmod.rebound_disc": "Music Disc - REBOUND!",
+    "item.iansmod.rebound_disc.desc": "REBOUND! - JPEGMAFIA ft. DATPIFFMAFIA",
+
+    "sounds.iansmod.rebound_disc": "REBOUND!"
 }
