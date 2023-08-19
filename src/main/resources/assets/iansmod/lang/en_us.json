@@ -5,13 +5,16 @@
     "item.iansmod.aligned_lunarium_ingot": "Aligned Lunarium Ingot",
     "item.iansmod.lunaric_rune": "Lunaric Rune",
     "item.iansmod.lunarium_apple": "Lunarium Apple",
+    "item.iansmod.lunarium_carrot": "Lunarium Carrot",
+    "item.iansmod.lunarium_coal_coke": "Lunarium Coal Coke",
     "item.iansmod.lunarium_ingot": "Lunarium Ingot",
     "item.iansmod.lunarium_nugget": "Lunarium Nugget",
+    "item.iansmod.lunarium_sludge": "Lunarium Sludge Bucket",
 
     "itemGroup.iansmodtab": "Ian's Mod",
 
-    "item.iansmod.rebound_disc": "Music Disc - REBOUND!",
-    "item.iansmod.rebound_disc.desc": "REBOUND! - JPEGMAFIA ft. DATPIFFMAFIA",
+    "item.iansmod.rebound_disc": "Music Disc",
+    "item.iansmod.rebound_disc.desc": "REBOUND! - JPEGMAFIA",
 
     "sounds.iansmod.rebound_disc": "REBOUND!"
 }

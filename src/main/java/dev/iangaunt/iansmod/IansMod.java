@@ -3,6 +3,7 @@ package dev.iangaunt.iansmod;
 import com.mojang.logging.LogUtils;
 
 import dev.iangaunt.iansmod.item.ModTab;
+import dev.iangaunt.iansmod.painting.ModPaintings;
 import dev.iangaunt.iansmod.sound.ModSounds;
 import dev.iangaunt.iansmod.item.ModItems;
 import dev.iangaunt.iansmod.block.ModBlocks;
@@ -45,6 +46,9 @@ public class IansMod {
         
         // Register the items to the eventBus.
         ModSounds.register(eventBus);
+
+        // Register the paintings to the eventBus.
+        ModPaintings.register(eventBus);
 
         // Register the setup method for modloading
         eventBus.addListener(this::setup);
