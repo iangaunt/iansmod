@@ -1,15 +1,29 @@
 {
     "block.iansmod.lunarium_block": "Lunarium Block",
     "block.iansmod.lunarium_ore": "Lunarium Ore",
+    "block.iansmod.wengewood_fence": "Wengewood Fence",
+    "block.iansmod.wengewood_fence_gate": "Wengewood Fence Gate",
+    "block.iansmod.wengewood_log": "Wengewood Log",
+    "block.iansmod.wengewood_planks": "Wengewood Planks",
+    "block.iansmod.wengewood_slab": "Wengewood Slab",
+    "block.iansmod.wengewood_stairs": "Wengewood Stairs",
 
     "item.iansmod.aligned_lunarium_ingot": "Aligned Lunarium Ingot",
+    "item.iansmod.fortified_lunar_rod": "Fortified Lunar Rod",
+    "item.iansmod.lunar_sensor": "Lunar Sensor",
     "item.iansmod.lunaric_rune": "Lunaric Rune",
+    "item.iansmod.lunaris_axe": "Lunaris Axe",
+    "item.iansmod.lunaris_pickaxe": "Lunaris Pickaxe",
+    "item.iansmod.lunaris_sword": "Lunaris Sword",
     "item.iansmod.lunarium_apple": "Lunarium Apple",
     "item.iansmod.lunarium_carrot": "Lunarium Carrot",
     "item.iansmod.lunarium_coal_coke": "Lunarium Coal Coke",
     "item.iansmod.lunarium_ingot": "Lunarium Ingot",
     "item.iansmod.lunarium_nugget": "Lunarium Nugget",
     "item.iansmod.lunarium_sludge": "Lunarium Sludge Bucket",
+
+    "item.iansmod.lunar_sensor.lunarium_found": "§aYou can feel the Lunar Sensor vibrating!",
+    "item.iansmod.lunar_sensor.no_lunarium_found": "§7§oThe Lunar Sensor sits silently in your hand ...",
 
     "itemGroup.iansmodtab": "Ian's Mod",
 

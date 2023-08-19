@@ -8,6 +8,11 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FenceBlock;
+import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -37,6 +42,56 @@ public class ModBlocks {
             BlockBehaviour.Properties.of(Material.STONE)
             .strength(1.6f).requiresCorrectToolForDrops()
             .lightLevel(state -> 4)
+        ), IansMod.MOD_TAB
+    );
+
+    // Wengewood Fence registry.
+    public static final RegistryObject<Block> WENGEWOOD_FENCE = registerBlock("wengewood_fence",
+        () -> new FenceBlock(
+            BlockBehaviour.Properties.of(Material.WOOD)
+            .strength(0.5f)
+        ), IansMod.MOD_TAB
+    );
+
+    // Wengewood Fence registry.
+    public static final RegistryObject<Block> WENGEWOOD_FENCE_GATE = registerBlock("wengewood_fence_gate",
+        () -> new FenceGateBlock(
+            BlockBehaviour.Properties.of(Material.WOOD)
+            .strength(0.5f)
+        ), IansMod.MOD_TAB
+    );
+
+    // Wengewood Log registry.
+    public static final RegistryObject<Block> WENGEWOOD_LOG = registerBlock("wengewood_log",
+        () -> new RotatedPillarBlock(
+            BlockBehaviour.Properties.of(Material.WOOD)
+            .strength(0.5f)
+        ), IansMod.MOD_TAB
+    );
+
+
+    // Wengewood Planks registry.
+    public static final RegistryObject<Block> WENGEWOOD_PLANKS = registerBlock("wengewood_planks",
+        () -> new Block(
+            BlockBehaviour.Properties.of(Material.WOOD)
+            .strength(0.5f)
+        ), IansMod.MOD_TAB
+    );
+
+    // Wengewood Slab registry.
+    public static final RegistryObject<Block> WENGEWOOD_SLAB = registerBlock("wengewood_slab",
+        () -> new SlabBlock(
+            BlockBehaviour.Properties.of(Material.WOOD)
+            .strength(0.5f)
+        ), IansMod.MOD_TAB
+    );
+
+    // Wengewood Stairs registry.
+    public static final RegistryObject<Block> WENGEWOOD_STAIRS = registerBlock("wengewood_stairs",
+        () -> new StairBlock(
+            () -> ModBlocks.WENGEWOOD_PLANKS.get().defaultBlockState(),
+            BlockBehaviour.Properties.of(Material.WOOD)
+            .strength(0.5f)
         ), IansMod.MOD_TAB
     );
 

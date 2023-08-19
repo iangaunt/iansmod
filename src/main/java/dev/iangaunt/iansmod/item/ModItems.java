@@ -1,14 +1,18 @@
 package dev.iangaunt.iansmod.item;
 
 import dev.iangaunt.iansmod.IansMod;
+import dev.iangaunt.iansmod.item.custom.LunarSensor;
 import dev.iangaunt.iansmod.item.custom.LunariumCoalCoke;
 import dev.iangaunt.iansmod.item.custom.LunariumSludge;
 import dev.iangaunt.iansmod.sound.ModSounds;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.RecordItem;
 import net.minecraft.world.item.SimpleFoiledItem;
+import net.minecraft.world.item.SwordItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -28,10 +32,41 @@ public class ModItems {
         .tab(IansMod.MOD_TAB)
     ));
 
+    // Fortified Lunar Stick registry.
+    public static final RegistryObject<Item> FORTIFIED_LUNAR_ROD = ITEMS.register("fortified_lunar_rod",
+        () -> new Item(new Item.Properties().tab(IansMod.MOD_TAB)
+    ));
+
+    // Lunar Sensor registry.
+    public static final RegistryObject<Item> LUNAR_SENSOR = ITEMS.register("lunar_sensor",
+        () -> new LunarSensor(new Item.Properties().tab(IansMod.MOD_TAB).durability(25)
+    ));
+
     // Lunaric Rune registry.
     public static final RegistryObject<SimpleFoiledItem> LUNARIC_RUNE = ITEMS.register("lunaric_rune",
         () -> new SimpleFoiledItem(new Item.Properties().rarity(Rarity.RARE)
         .tab(IansMod.MOD_TAB)
+    ));
+
+    // Lunaris Axe registry.
+    public static final RegistryObject<Item> LUNARIS_AXE = ITEMS.register("lunaris_axe",
+        () -> new AxeItem(
+            ModTiers.LUNARIS, 9, -1.5f,
+            new Item.Properties().tab(IansMod.MOD_TAB)
+    ));
+
+    // Lunaris Pickaxe registry.
+    public static final RegistryObject<Item> LUNARIS_PICKAXE = ITEMS.register("lunaris_pickaxe",
+        () -> new PickaxeItem(
+            ModTiers.LUNARIS, 5, 1.5f,
+            new Item.Properties().tab(IansMod.MOD_TAB)
+    ));
+
+    // Lunaris Sword registry.
+    public static final RegistryObject<Item> LUNARIS_SWORD = ITEMS.register("lunaris_sword",
+        () -> new SwordItem(
+            ModTiers.LUNARIS, 7, 0.5f,
+            new Item.Properties().tab(IansMod.MOD_TAB)
     ));
 
     // Lunarium Apple registry.
