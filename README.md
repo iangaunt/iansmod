@@ -5,11 +5,13 @@ but unfortunately the MDK had shit the bed and wasn't working very well for me).
 
 ## Current Features
 
-* Lunarium Items (Ingots, Nuggots, Ore, Block, Runs, Apples)
+* Lunarium Items (Ingots, Tools, Ores)
+* Wengewood wood type (Darker, desaturated spruce color)
 * Music Disc - REBOUND! by JPEGMAFIA
 
 ## Future Features
 
-* Some new ores and armor.
-* Some new block textures.
+* Wengewood Trees
+* More Lunaris tools and armor.
+* New ore types.
 * Anything I'm feeling, really!
