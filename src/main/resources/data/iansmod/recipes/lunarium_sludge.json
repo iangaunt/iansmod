@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "iansmod:lunarium_nugget"
+        },
+        {
+            "item": "iansmod:lunarium_nugget"
+        },
+        {
+            "item": "minecraft:lava_bucket"
+        }
+    ],
+    "result": {
+        "item": "iansmod:lunarium_sludge"
+    }
+}
