@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/inner_stairs",
+    "textures": {
+        "bottom": "iansmod:block/wengewood_planks",
+        "top": "iansmod:block/wengewood_planks",
+        "side": "iansmod:block/wengewood_planks"
+    }
+}

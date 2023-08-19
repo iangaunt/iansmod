@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " L ",
+        " M ",
+        " R "
+    ],
+    "key": {
+        "L": {
+            "item": "iansmod:lunarium_ingot"
+        },
+        "M": {
+            "item": "iansmod:lunaric_rune"
+        },
+        "R": {
+            "item": "iansmod:fortified_lunar_rod"
+        }
+    },
+    "result": {
+        "item": "iansmod:lunaris_sword"
+    }
+}

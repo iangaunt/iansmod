@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:block/cube_column",
+    "textures": {
+        "end": "iansmod:block/wengewood_log_top",
+        "side": "iansmod:block/wengewood_log"
+    }
+}

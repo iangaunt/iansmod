@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "wooden_fence_gate",
+    "pattern": [
+        "#W#",
+        "#W#"
+    ],
+    "key": {
+        "W": {
+            "item": "iansmod:wengewood_planks"
+        },
+        "#": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "iansmod:wengewood_fence_gate"
+    }
+}

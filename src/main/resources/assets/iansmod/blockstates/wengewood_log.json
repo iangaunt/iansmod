@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "axis=x": {
+            "model": "iansmod:block/wengewood_log_horizontal",
+            "x": 90,
+            "y": 90
+        },
+        "axis=y": {
+            "model": "iansmod:block/wengewood_log"
+        },
+        "axis=z": {
+            "model": "iansmod:block/wengewood_log_horizontal",
+            "x": 90
+        }
+    }
+  }

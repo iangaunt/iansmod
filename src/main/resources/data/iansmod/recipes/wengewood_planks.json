@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "group": "planks",
+    "ingredients": [
+        {
+            "item": "iansmod:wengewood_log"
+        }
+    ],
+    "result": {
+        "item": "iansmod:wengewood_planks",
+        "count": 4
+    }
+}

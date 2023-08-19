@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "GGG",
+        "GLG",
+        "DQD"
+    ],
+    "key": {
+        "G": {
+            "item": "minecraft:glass_pane"
+        },
+        "L": {
+            "item": "iansmod:lunarium_ingot"
+        },
+        "D": {
+            "item": "minecraft:deepslate"
+        },
+        "Q": {
+            "item": "minecraft:quartz"
+        }
+    },
+    "result": {
+        "item": "iansmod:lunar_sensor"
+    }
+}

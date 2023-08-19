@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "iansmod:block/wengewood_slab"
+        },
+        "type=double": {
+            "model": "iansmod:block/wengewood_planks"
+        },
+        "type=top": {
+            "model": "iansmod:block/wengewood_slab_top"
+        }
+    }
+}

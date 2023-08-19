@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "wooden_slab",
+    "pattern": [
+        "#  ",
+        "## ",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "iansmod:wengewood_planks"
+        }
+    },
+    "result": {
+        "item": "iansmod:wengewood_stairs",
+        "count": 4
+    }
+}
