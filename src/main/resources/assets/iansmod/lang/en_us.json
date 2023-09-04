@@ -30,5 +30,8 @@
     "item.iansmod.rebound_disc": "Music Disc",
     "item.iansmod.rebound_disc.desc": "REBOUND! - JPEGMAFIA",
 
-    "sounds.iansmod.rebound_disc": "REBOUND!"
+    "sounds.iansmod.rebound_disc": "REBOUND!",
+
+    "tooltip.iansmod.tooltip.shift": "§7§oPress §eSHIFT §7for more information.",
+    "tooltip.iansmod.lunar_sensor.tooltip.shift": "§7Locates any §aLunarium Ore §7in a 15-block range of the player when a nearby block is right-clicked."
 }

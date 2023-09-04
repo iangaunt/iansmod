@@ -7,6 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+/** Contains all of the paintings in the mod. */
 public class ModPaintings {
     public static final DeferredRegister<Motive> PAINTING_MOTIVES = DeferredRegister.create(
         ForgeRegistries.PAINTING_TYPES, IansMod.MOD_ID

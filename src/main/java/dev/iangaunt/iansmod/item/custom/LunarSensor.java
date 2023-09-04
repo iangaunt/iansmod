@@ -1,6 +1,10 @@
 package dev.iangaunt.iansmod.item.custom;
 
+import java.util.List;
+import javax.annotation.Nullable;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
@@ -8,7 +12,10 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 
 /** The Lunar Sensor tracks any Lunarium Ore
@@ -21,16 +28,18 @@ public class LunarSensor extends Item {
         super(props);
     }
 
-    @Override
     /**
      * When the Lunar Sensor is activated, it will tell the player
      * if there is a block in a certain range of the player.
      */
+    @Override
     public InteractionResult useOn(UseOnContext context) {
         if (context.getLevel().isClientSide()) {
             // Get the player of the interaction.
             Player player = context.getPlayer();
-            if (player == null) return null;
+            if (player == null) {
+                return null;
+            }
         
             BlockPos position = player.blockPosition();
 
@@ -43,7 +52,10 @@ public class LunarSensor extends Item {
 
             // Based on the found value, stitch a new message to send
             // to the player's chatbar.
-            String message = "item.iansmod.lunar_sensor." + (found ? "lunarium_found" : "no_lunarium_found");
+            String message = "item.iansmod.lunar_sensor." + (
+                found ? "lunarium_found" : "no_lunarium_found"
+            );
+
             player.sendMessage(
                 new TranslatableComponent(message),
                 player.getUUID()
@@ -66,12 +78,27 @@ public class LunarSensor extends Item {
         return super.useOn(context);
     }
 
+    /** Creates a new shiftable tooltip for the Lunar Sensor. */
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable Level level, 
+        List<Component> tooltipComponents, TooltipFlag isAdvanced) {
+        if (Screen.hasShiftDown()) {
+            tooltipComponents.add(
+                new TranslatableComponent("tooltip.iansmod.lunar_sensor.tooltip.shift")
+            );
+        } else {
+            tooltipComponents.add(
+                new TranslatableComponent("tooltip.iansmod.tooltip.shift")
+            );
+        }
+    }
+
     /**
      * Checks in a cube of edge length {@code range} of the midpoint at 
      * global position {@code x, y, z} and searches each block
      * in order to see if a Lunarium Ore exists in the given radius. If it does,
      * it will return {@code true}.
-     * 
+     *
      * @param context - The interaction context.
      * @param x - The {@code x} coordinate of the midpoint of the cube.
      * @param y - The {@code y} coordinate of the midpoint of the cube.

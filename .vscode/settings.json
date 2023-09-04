@@ -15,12 +15,14 @@
         ".gitattributes": true,
         "gradlew.bat": true,
         "LICENSE.txt": true,
+        ".git": true,
 
         "src/test": true,
 
     },
+    
     "java.compile.nullAnalysis.mode": "automatic",
     "java.checkstyle.configuration": "${workspaceFolder}\\formatting.xml",
-    "java.checkstyle.version": "9.3",
+    "java.checkstyle.version": "10.12.3",
     "java.configuration.updateBuildConfiguration": "interactive"
 }

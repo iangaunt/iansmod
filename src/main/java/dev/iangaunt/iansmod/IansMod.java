@@ -1,30 +1,28 @@
 package dev.iangaunt.iansmod;
 
 import com.mojang.logging.LogUtils;
-
+import dev.iangaunt.iansmod.block.ModBlocks;
+import dev.iangaunt.iansmod.item.ModItems;
 import dev.iangaunt.iansmod.item.ModTab;
 import dev.iangaunt.iansmod.painting.ModPaintings;
 import dev.iangaunt.iansmod.sound.ModSounds;
-import dev.iangaunt.iansmod.item.ModItems;
-import dev.iangaunt.iansmod.block.ModBlocks;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
+/** Initializes all of the mod registries and runs the mod. */
 @Mod("iansmod")
 
-/** The main container file for the mod. */
 public class IansMod {
     // Tag for the mod id.
     public static final String MOD_ID = "iansmod";
@@ -35,25 +33,20 @@ public class IansMod {
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
+    /** Initializes all of the registries. */
     public IansMod() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        // Register the items to the eventBus.
-        ModItems.register(eventBus);
-
-        // Register the blocks to the eventBus.
+        // Registers all of the item busses to the registery.
         ModBlocks.register(eventBus);
-        
-        // Register the items to the eventBus.
+        ModItems.register(eventBus);
+        ModPaintings.register(eventBus);
         ModSounds.register(eventBus);
 
-        // Register the paintings to the eventBus.
-        ModPaintings.register(eventBus);
-
-        // Register the setup method for modloading
+        // Register the setup method for modloading.
         eventBus.addListener(this::setup);
 
-        // Register ourselves for server and other game events we are interested in
+        // Register ourselves for server and other game events we are interested in.
         MinecraftForge.EVENT_BUS.register(this);
     }
 
@@ -70,12 +63,14 @@ public class IansMod {
         LOGGER.info("HELLO from server starting");
     }
 
-    // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
-    // Event bus for receiving Registry Events)
+    // You can use EventBusSubscriber to automatically subscribe events on the
+    //  contained class (this is subscribing to the MOD Event bus for receiving Registry Events)
+    /** Outputs when a block is registered. */
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
         @SubscribeEvent
-        public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
+        public static void onBlocksRegistry(
+            final RegistryEvent.Register<Block> blockRegistryEvent) {
             // Register a new block here
             LOGGER.info("HELLO from Register Block");
         }
