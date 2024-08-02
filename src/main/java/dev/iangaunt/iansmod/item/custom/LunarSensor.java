@@ -32,6 +32,7 @@ public class LunarSensor extends Item {
      * When the Lunar Sensor is activated, it will tell the player
      * if there is a block in a certain range of the player.
      */
+    @SuppressWarnings("null")
     @Override
     public InteractionResult useOn(UseOnContext context) {
         if (context.getLevel().isClientSide()) {
@@ -79,6 +80,7 @@ public class LunarSensor extends Item {
     }
 
     /** Creates a new shiftable tooltip for the Lunar Sensor. */
+    @SuppressWarnings("null")
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, 
         List<Component> tooltipComponents, TooltipFlag isAdvanced) {

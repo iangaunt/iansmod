@@ -3,16 +3,23 @@ package dev.iangaunt.iansmod.block;
 import com.google.common.base.Supplier;
 import dev.iangaunt.iansmod.IansMod;
 import dev.iangaunt.iansmod.item.ModItems;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -56,13 +63,30 @@ public class ModBlocks {
         ), IansMod.MOD_TAB
     );
 
-    // Wengewood Fence registry.
+    // Wengewood Fence Gate registry.
     public static final RegistryObject<Block> WENGEWOOD_FENCE_GATE = registerBlock(
         "wengewood_fence_gate",
         () -> new FenceGateBlock(
             BlockBehaviour.Properties.of(Material.WOOD)
             .strength(0.5f)
         ), IansMod.MOD_TAB
+    );
+
+    // Wengewood Leaves registry.
+    public static final RegistryObject<Block> WENGEWOOD_LEAVES = registerBlock(
+        "wengewood_leaves",
+        () -> new LeavesBlock(
+            BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)
+        ) {
+            @Override
+            public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
+
+            @Override
+            public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 60; }
+
+            @Override
+            public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 30; }
+        }, IansMod.MOD_TAB
     );
 
     // Wengewood Log registry.
@@ -74,13 +98,21 @@ public class ModBlocks {
         ), IansMod.MOD_TAB
     );
 
-
     // Wengewood Planks registry.
     public static final RegistryObject<Block> WENGEWOOD_PLANKS = registerBlock(
         "wengewood_planks",
         () -> new Block(
             BlockBehaviour.Properties.of(Material.WOOD)
             .strength(0.5f)
+        ), IansMod.MOD_TAB
+    );
+
+    // Wengewood Sapling registry.
+    public static final RegistryObject<Block> WENGEWOOD_SAPLING = registerBlock(
+        "wengewood_sapling",
+        () -> new SaplingBlock(
+            ,
+            BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)
         ), IansMod.MOD_TAB
     );
 

@@ -6,6 +6,8 @@ import dev.iangaunt.iansmod.item.ModItems;
 import dev.iangaunt.iansmod.item.ModTab;
 import dev.iangaunt.iansmod.painting.ModPaintings;
 import dev.iangaunt.iansmod.sound.ModSounds;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -44,10 +46,16 @@ public class IansMod {
         ModSounds.register(eventBus);
 
         // Register the setup method for modloading.
+        eventBus.addListener(this::clientSetup);
         eventBus.addListener(this::setup);
 
         // Register ourselves for server and other game events we are interested in.
         MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    private void clientSetup(final FMLCommonSetupEvent event) {
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.WENGEWOOD_LEAVES.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.WENGEWOOD_SAPLING.get(), RenderType.cutout());
     }
 
     private void setup(final FMLCommonSetupEvent event) {
