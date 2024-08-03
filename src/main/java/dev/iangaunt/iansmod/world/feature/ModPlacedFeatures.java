@@ -9,7 +9,7 @@ public class ModPlacedFeatures {
     public static final Holder<PlacedFeature> WENGEWOOD_PLACED = PlacementUtils.register(
         "wengewood_placed",
         ModConfiguredFeatures.WENGEWOOD_SPAWN, VegetationPlacements.treePlacement(
-            PlacementUtils.countExtra(3, 0.1f, 2)
+            PlacementUtils.countExtra(3, 0.05f, 2)
         )
     );
 }

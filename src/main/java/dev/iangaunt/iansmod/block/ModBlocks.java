@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SaplingBlock;
@@ -125,6 +126,18 @@ public class ModBlocks {
             .strength(0.5f)
         ), IansMod.MOD_TAB
     );
+
+    
+    // Wengewood Slab registry.
+    /* 
+    public static final RegistryObject<Block> WENGEWOOD_SPRIG = registerBlock(
+        "wengewood_sprig",
+        () -> new FlowerBlock(
+            BlockBehaviour.Properties.of(Material.WOOD)
+            .strength(0.5f)
+        ), IansMod.MOD_TAB
+    );
+    */
 
     // Wengewood Stairs registry.
     public static final RegistryObject<Block> WENGEWOOD_STAIRS = registerBlock(
