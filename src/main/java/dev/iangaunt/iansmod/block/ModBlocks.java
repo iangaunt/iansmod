@@ -3,6 +3,7 @@ package dev.iangaunt.iansmod.block;
 import com.google.common.base.Supplier;
 import dev.iangaunt.iansmod.IansMod;
 import dev.iangaunt.iansmod.item.ModItems;
+import dev.iangaunt.iansmod.world.feature.tree.WengewoodTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.BlockItem;
@@ -111,7 +112,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> WENGEWOOD_SAPLING = registerBlock(
         "wengewood_sapling",
         () -> new SaplingBlock(
-            ,
+            new WengewoodTreeGrower(),
             BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)
         ), IansMod.MOD_TAB
     );
