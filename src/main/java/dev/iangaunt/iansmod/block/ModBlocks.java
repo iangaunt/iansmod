@@ -6,6 +6,7 @@ import dev.iangaunt.iansmod.item.ModItems;
 import dev.iangaunt.iansmod.world.feature.tree.WengewoodTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -126,18 +127,16 @@ public class ModBlocks {
             .strength(0.5f)
         ), IansMod.MOD_TAB
     );
-
     
-    // Wengewood Slab registry.
-    /* 
+    // Wengewood Sprig registry.
+    @SuppressWarnings("deprecation")
     public static final RegistryObject<Block> WENGEWOOD_SPRIG = registerBlock(
         "wengewood_sprig",
         () -> new FlowerBlock(
-            BlockBehaviour.Properties.of(Material.WOOD)
-            .strength(0.5f)
+            MobEffects.BLINDNESS, 1, 
+            BlockBehaviour.Properties.copy(Blocks.POPPY).noOcclusion()
         ), IansMod.MOD_TAB
     );
-    */
 
     // Wengewood Stairs registry.
     public static final RegistryObject<Block> WENGEWOOD_STAIRS = registerBlock(

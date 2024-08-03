@@ -56,6 +56,7 @@ public class IansMod {
     private void clientSetup(final FMLCommonSetupEvent event) {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.WENGEWOOD_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.WENGEWOOD_SAPLING.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.WENGEWOOD_SPRIG.get(), RenderType.cutout());
     }
 
     private void setup(final FMLCommonSetupEvent event) {
