@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "W W",
+        "LLL",
+        "SSS"
+    ],
+    "key": {
+        "W": {
+            "item": "minecraft:weathered_copper"
+        },
+        "L": {
+            "item": "iansmod:lunarium_ingot"
+        },
+        "S": {
+            "item": "minecraft:stone_bricks"
+        }
+    },
+    "result": {
+        "item": "iansmod:lunar_altar"
+    }
+}

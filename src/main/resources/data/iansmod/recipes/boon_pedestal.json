@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "WGW",
+        "WSW",
+        "SSS"
+    ],
+    "key": {
+        "W": {
+            "item": "minecraft:weathered_copper"
+        },
+        "G": {
+            "item": "minecraft:green_wool"
+        },
+        "S": {
+            "item": "minecraft:stone_bricks"
+        }
+    },
+    "result": {
+        "item": "iansmod:boon_pedestal"
+    }
+}

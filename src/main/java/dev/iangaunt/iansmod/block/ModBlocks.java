@@ -2,6 +2,8 @@ package dev.iangaunt.iansmod.block;
 
 import com.google.common.base.Supplier;
 import dev.iangaunt.iansmod.IansMod;
+import dev.iangaunt.iansmod.block.custom.BoonPedestal;
+import dev.iangaunt.iansmod.block.custom.LunarAltar;
 import dev.iangaunt.iansmod.item.ModItems;
 import dev.iangaunt.iansmod.world.feature.tree.WengewoodTreeGrower;
 import net.minecraft.core.BlockPos;
@@ -36,6 +38,25 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(
         ForgeRegistries.BLOCKS, 
         IansMod.MOD_ID
+    );
+
+    // Boon Pedestal registry.
+    public static final RegistryObject<Block> BOON_PEDESTAL = registerBlock(
+        "boon_pedestal",
+        () -> new BoonPedestal(
+            BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)
+            .noOcclusion().requiresCorrectToolForDrops()
+        ), IansMod.MOD_TAB
+    );
+        
+    // Lunar Altar registry.
+    public static final RegistryObject<Block> LUNAR_ALTAR = registerBlock(
+        "lunar_altar",
+        () -> new LunarAltar(
+            BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).noOcclusion()
+            .strength(2f).requiresCorrectToolForDrops()
+            .lightLevel(state -> 10)
+        ), IansMod.MOD_TAB
     );
     
     // Lunarium Block registry.

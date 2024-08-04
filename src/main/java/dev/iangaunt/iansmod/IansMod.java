@@ -55,6 +55,9 @@ public class IansMod {
     }
 
     private void clientSetup(final FMLCommonSetupEvent event) {
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.BOON_PEDESTAL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.LUNAR_ALTAR.get(), RenderType.cutout());
+
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.WENGEWOOD_LEAVES.get(), RenderType.cutout());
         
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.WENGEWOOD_SAPLING.get(), RenderType.cutout());
