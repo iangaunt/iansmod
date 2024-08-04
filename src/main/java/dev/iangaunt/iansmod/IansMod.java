@@ -11,6 +11,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -55,14 +56,26 @@ public class IansMod {
 
     private void clientSetup(final FMLCommonSetupEvent event) {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.WENGEWOOD_LEAVES.get(), RenderType.cutout());
+        
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.WENGEWOOD_SAPLING.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(
+            ModBlocks.POTTED_WENGEWOOD_SAPLING.get(), RenderType.cutout());
+
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.WENGEWOOD_SPRIG.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(
+            ModBlocks.POTTED_WENGEWOOD_SPRIG.get(), RenderType.cutout());
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-        // some preinit code
-        LOGGER.info("HELLO FROM PREINIT");
-        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+        event.enqueueWork(() -> {
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(
+                ModBlocks.WENGEWOOD_SPRIG.getId(), ModBlocks.POTTED_WENGEWOOD_SPRIG
+            );
+
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(
+                ModBlocks.WENGEWOOD_SAPLING.getId(), ModBlocks.POTTED_WENGEWOOD_SAPLING
+            );
+        });
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

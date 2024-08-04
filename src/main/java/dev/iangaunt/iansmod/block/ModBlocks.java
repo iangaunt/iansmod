@@ -16,6 +16,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.FlowerBlock;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SaplingBlock;
@@ -82,13 +83,28 @@ public class ModBlocks {
             BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)
         ) {
             @Override
-            public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return true; }
+            public boolean isFlammable(
+                BlockState state, BlockGetter world, 
+                BlockPos pos, Direction face) { 
+                
+                return true; 
+            }
 
             @Override
-            public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 60; }
+            public int getFlammability(
+                BlockState state, BlockGetter world, 
+                BlockPos pos, Direction face) { 
+                    
+                return 60; 
+            }
 
             @Override
-            public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) { return 30; }
+            public int getFireSpreadSpeed(
+                BlockState state, BlockGetter world, 
+                BlockPos pos, Direction face) { 
+                    
+                return 30; 
+            }
         }, IansMod.MOD_TAB
     );
 
@@ -148,6 +164,25 @@ public class ModBlocks {
         ), IansMod.MOD_TAB
     );
 
+    // -- Non-registered blocks -- //
+    // Potted Wengewood Sapling registry.
+    public static final RegistryObject<Block> POTTED_WENGEWOOD_SAPLING = registerBlockWithoutItem(
+        "potted_wengewood_sapling",
+        () -> new FlowerPotBlock(
+            null, ModBlocks.WENGEWOOD_SAPLING,
+            BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING).noOcclusion()
+        )
+    );
+
+    // Potted Wengewood Sprig registry.
+    public static final RegistryObject<Block> POTTED_WENGEWOOD_SPRIG = registerBlockWithoutItem(
+        "potted_wengewood_sprig",
+        () -> new FlowerPotBlock(
+            null, ModBlocks.WENGEWOOD_SPRIG,
+            BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).noOcclusion()
+        )
+    );
+    
     /** Registers the block in the block form to the event bus. */
     private static <T extends Block> RegistryObject<T> registerBlock(
         String name, Supplier<T> block, CreativeModeTab tab) {
@@ -157,6 +192,13 @@ public class ModBlocks {
         return toReturn;
     }
 
+    /** Registers the block without an item form to the event bus. */
+    private static <T extends Block> RegistryObject<T> registerBlockWithoutItem(
+        String name, Supplier<T> block) {
+
+        return BLOCKS.register(name, block);
+    }
+    
     /** Registers the block in item form to the event bus. */
     private static <T extends Block> RegistryObject<Item> registerBlockItem(
         String name, RegistryObject<T> block, CreativeModeTab tab) {

@@ -10,6 +10,8 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
@@ -17,6 +19,7 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
+/** Custom configured features for the mod. */
 public class ModConfiguredFeatures {
     public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> WENGEWOOD_TREE = 
         FeatureUtils.register(
@@ -44,7 +47,21 @@ public class ModConfiguredFeatures {
         FeatureUtils.register(
             "wengewood_spawn", Feature.RANDOM_SELECTOR,
             new RandomFeatureConfiguration(
-                List.of(new WeightedPlacedFeature(WENGEWOOD_CHECKED, 0.5F)), 
+                List.of(new WeightedPlacedFeature(WENGEWOOD_CHECKED, 0.1F)), 
                 WENGEWOOD_CHECKED)
             );
+
+    public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> WENGEWOOD_SPRIG = 
+        FeatureUtils.register(
+            "flower_wengewood_sprig", Feature.FLOWER,
+            new RandomPatchConfiguration(
+                36, 8, 2, 
+                PlacementUtils.onlyWhenEmpty(
+                    Feature.SIMPLE_BLOCK, 
+                    new SimpleBlockConfiguration(
+                        BlockStateProvider.simple(ModBlocks.WENGEWOOD_SPRIG.get())
+                    )
+                )
+            )
+        );
 }

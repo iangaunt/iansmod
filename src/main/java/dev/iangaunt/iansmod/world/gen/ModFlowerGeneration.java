@@ -12,8 +12,8 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 
-/** Generates custom trees based on specific biomes. */
-public class ModTreeGeneration {
+/** Generates custom flowers based on specific biomes. */
+public class ModFlowerGeneration {
     /**
      * Generates all modded trees based on whether the current biome is
      * suitable for the given tree.
@@ -21,7 +21,7 @@ public class ModTreeGeneration {
      * @param event - The BiomeLoadingEvent to parse for biomes.
      */
     @SuppressWarnings({"null", "deprecation"})
-    public static void generateTrees(final BiomeLoadingEvent event) {
+    public static void generateFlowers(final BiomeLoadingEvent event) {
         ResourceKey<Biome> key = ResourceKey.create(Registry.BIOME_REGISTRY, event.getName());
         Set<BiomeDictionary.Type> types = BiomeDictionary.getTypes(key);
 
@@ -29,7 +29,7 @@ public class ModTreeGeneration {
             List<Holder<PlacedFeature>> base = 
                 event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
 
-            base.add(ModPlacedFeatures.WENGEWOOD_PLACED);
+            base.add(ModPlacedFeatures.WENGEWOOD_SPRIG_PLACED);
         }
     }
 }
